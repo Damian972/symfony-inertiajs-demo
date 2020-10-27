@@ -18,6 +18,14 @@ npm install
 php -S localhost:8080 -t public
 ```
 
+Build the assets with Encore:
+
+```bash
+npm run dev
+```
+
+... and you're ready to go!!
+
 ## Ressources
 
 -   [Symfony](https://symfony.com)
