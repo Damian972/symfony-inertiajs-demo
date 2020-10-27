@@ -1,11 +1,11 @@
 <script>
-	import { inertia } from '@inertiajs/inertia-svelte'
+	import Layout from '../@shared/Layout.svelte';
 	import Greeting from '../components/Greeting.svelte';
 
+	export let title = 'Home';
 	export let person = 'John';
 </script>
 
-<Greeting {...person}></Greeting>
-
-
-<a use:inertia href="/blog" class="btn-indigo">Blog</a>
+<Layout {title}>
+	<Greeting {...person} />
+</Layout>
