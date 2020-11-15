@@ -17,6 +17,6 @@ class AboutController extends AbstractController
      */
     public function index(InertiaInterface $inertia): Response
     {
-        return $inertia->render('About');
+        return $inertia->render('About', [], ['title' => 'About']);
     }
 }

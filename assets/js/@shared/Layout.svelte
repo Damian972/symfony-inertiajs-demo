@@ -5,7 +5,9 @@
 </script>
 
 <svelte:head>
-	<title>{title}</title>
+	{#if title}
+		<title>{title}</title>
+	{/if}
 </svelte:head>
 
 <main>

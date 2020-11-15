@@ -17,6 +17,6 @@ class HomeController extends AbstractController
     {
         $person = new Person('Bill Doe', 'Policeman');
 
-        return $inertia->render('Home', ['person' => $person]);
+        return $inertia->render('Home', ['person' => $person], ['title' => 'Home']);
     }
 }

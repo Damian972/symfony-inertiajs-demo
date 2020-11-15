@@ -2,11 +2,11 @@
 
 namespace App\Subscriber;
 
-use App\Exception\InertiaRequestException;
 use Rompetomp\InertiaBundle\Service\InertiaInterface;
 use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
+use Symfony\Component\HttpKernel\Exception\HttpException;
 use Symfony\Component\HttpKernel\KernelEvents;
 
 class InertiaExceptionSubscriber implements EventSubscriberInterface
@@ -28,7 +28,7 @@ class InertiaExceptionSubscriber implements EventSubscriberInterface
     public function onKernelException(ExceptionEvent $event): void
     {
         $error = $event->getThrowable();
-        if (!$error instanceof InertiaRequestException) {
+        if (!$error instanceof HttpException) {
             return;
         }
 
